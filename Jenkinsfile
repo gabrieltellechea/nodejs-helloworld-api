@@ -4,6 +4,11 @@ pipeline {
         nodejs 'nodejs'
     }
     stages {
+        stage('ClonarRepo') {
+            steps {
+                sh 'git clone https://github.com/gabrieltellechea/nodejs-helloworld-api.git'
+          }
+        }
         stage('Build') {
             steps {
                 echo "Ejecutar npm install" 
